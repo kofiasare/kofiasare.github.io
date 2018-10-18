@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kofi A. Asare</title>
-    <link>https://you.github.io/</link>
+    <link>/</link>
     <description>Recent content on Kofi A. Asare</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Thu, 18 Oct 2018 16:12:14 +0000</lastBuildDate>
     
-	<atom:link href="https://you.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Responding To Cors Preflight Request in Go</title>
-      <link>https://you.github.io/blog/responding-to-cors-preflight-request-in-go/</link>
+      <link>/blog/responding-to-cors-preflight-request-in-go/</link>
       <pubDate>Thu, 18 Oct 2018 16:12:14 +0000</pubDate>
       
-      <guid>https://you.github.io/blog/responding-to-cors-preflight-request-in-go/</guid>
+      <guid>/blog/responding-to-cors-preflight-request-in-go/</guid>
       <description>Using the iris web framework, I created a middleware to respond to all cors preflight requests.
 func corsMiddleware(ctx iris.Context) { var ( corsOrigin = ctx.GetHeader(&amp;#34;Origin&amp;#34;) corsMethod = ctx.GetHeader(&amp;#34;Access-Control-Request-Method&amp;#34;) corsHeaders = ctx.GetHeader(&amp;#34;Access-Control-Request-Headers&amp;#34;) isCorsPreflightRequest = (corsOrigin != &amp;#34;&amp;#34;) || (corsMethod != &amp;#34;&amp;#34;) || (corsHeaders != &amp;#34;&amp;#34;) ) if isCorsPreflightRequest { ctx.Header(&amp;#34;Access-Control-Allow-Origin&amp;#34;, corsOrigin) ctx.Header(&amp;#34;Access-Control-Allow-Methods&amp;#34;, corsMethod) ctx.Header(&amp;#34;Access-Control-Allow-Headers&amp;#34;, corsHeaders) ctx.Header(&amp;#34;Access-Control-Max-Age&amp;#34;, string(60*60*24)) if ctx.Request().Method == &amp;#34;OPTIONS&amp;#34; { ctx.StatusCode(200) return } } ctx.Next() } func main() { app := iris.</description>
     </item>
     
     <item>
       <title>CORS Preflight Request</title>
-      <link>https://you.github.io/blog/cors-preflight-request/</link>
+      <link>/blog/cors-preflight-request/</link>
       <pubDate>Wed, 17 Oct 2018 11:33:24 +0000</pubDate>
       
-      <guid>https://you.github.io/blog/cors-preflight-request/</guid>
+      <guid>/blog/cors-preflight-request/</guid>
       <description>A CORS preflight request is a special http request that checks to see if the CORS protocol is understood by your backend http server.
 It is an OPTIONS request, using three (3) HTTP request headers:
  Access-Control-Request-Method Access-Control-Request-Headers Origin  A preflight request is automatically issued by a browser, when needed. In normal cases, front-end developers don&amp;rsquo;t need to craft such requests themselves.
