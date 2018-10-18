@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Kofi A. Asare">
+<meta name="description" content="A CORS preflight request is a special http request that checks to see if the CORS protocol is understood by your backend http server.
+It is an OPTIONS request, using three (3) HTTP request headers:
+ Access-Control-Request-Method Access-Control-Request-Headers Origin  A preflight request is automatically issued by a browser, when needed. In normal cases, front-end developers don&rsquo;t need to craft such requests themselves.
+For example, an http client might be asking your http server backend if it would allow a DELETE request, before sending a DELETE request, by using a preflight request">
+
+<meta property="og:title" content="CORS Preflight Request" />
+<meta property="og:description" content="A CORS preflight request is a special http request that checks to see if the CORS protocol is understood by your backend http server.
+It is an OPTIONS request, using three (3) HTTP request headers:
+ Access-Control-Request-Method Access-Control-Request-Headers Origin  A preflight request is automatically issued by a browser, when needed. In normal cases, front-end developers don&rsquo;t need to craft such requests themselves.
+For example, an http client might be asking your http server backend if it would allow a DELETE request, before sending a DELETE request, by using a preflight request" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://you.github.io/blog/cors-preflight-request/" /><meta property="article:published_time" content="2018-10-17T11:33:24&#43;00:00"/>
+<meta property="article:modified_time" content="2018-10-17T11:33:24&#43;00:00"/>
+
+<title>
+
+
+     CORS Preflight Request 
+
+</title>
+<link rel="canonical" href="https://you.github.io/blog/cors-preflight-request/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="https://you.github.io/css/reset.css?t=2018-10-18%2019%3a03%3a22.865879%20%2b0000%20GMT%20m%3d%2b0.102576434">
+    <link rel="stylesheet" href="https://you.github.io/css/pygments.css?t=2018-10-18%2019%3a03%3a22.865879%20%2b0000%20GMT%20m%3d%2b0.102576434">
+    <link rel="stylesheet" href="https://you.github.io/css/main.css?t=2018-10-18%2019%3a03%3a22.865879%20%2b0000%20GMT%20m%3d%2b0.102576434">
+    
+        <link rel="stylesheet" href="https://you.github.io/css/override.css?t=2018-10-18%2019%3a03%3a22.865879%20%2b0000%20GMT%20m%3d%2b0.102576434">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="https://you.github.io/img/profile.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="https://you.github.io/"><img class="avatar" src="https://you.github.io/img/profile.png" srcset="https://you.github.io/img/profile.png 1x"></a>
+            
+            <a href="https://you.github.io/"><div class="name">Kofi A. Asare</div></a>
+            
+              <h3 class="self-intro">Software Engineer</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href="https://you.github.io/"><span></span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/kofiasare" target="_blank" rel="noopener"><img class="icon" src="https://you.github.io/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:archykofi@gmail.com"><img class="icon" src="https://you.github.io/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    CORS Preflight Request
+
+</div>
+
+                    <div class="initials"><a href="https://you.github.io/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Wed Oct 17 2018 11:33:24 UTC'>Oct 17, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>One minute read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>A CORS preflight request is a special http request that checks to see if the
+<code>CORS</code> protocol is understood by your backend http server.</p>
+
+<p>It is an <code>OPTIONS</code> request, using three (3) HTTP request headers:</p>
+
+<ol>
+<li>Access-Control-Request-Method</li>
+<li>Access-Control-Request-Headers</li>
+<li>Origin</li>
+</ol>
+
+<p>A preflight request is automatically issued by a browser, when needed. In normal
+cases, front-end developers don&rsquo;t need to craft such requests themselves.</p>
+
+<p>For example, an http client might be asking your http server backend if it would
+allow a <code>DELETE</code> request, before sending a <code>DELETE</code> request, by using a <code>preflight request</code></p>
+
+<p>credits: <a href="https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request">https://developer.mozilla.org/en-US/docs/Glossary/Preflight_request</a></p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="https://you.github.io/tags/http">http</a>
+                  
+                    <a href="https://you.github.io/tags/cors">cors</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="https://you.github.io/blog">All Posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+
