@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elixir on Kofi A. Asare</title>
+    <link>/tags/elixir/</link>
+    <description>Recent content in Elixir on Kofi A. Asare</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 19 Oct 2018 13:36:07 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/elixir/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elixir List</title>
+      <link>/blog/elixir-list/</link>
+      <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
+      
+      <guid>/blog/elixir-list/</guid>
+      <description>List
+A list in elixir is denoted by square brackets [ ], its underlying data structure is a linked list ( single ) as opposed
+to an array. Each element (node) of the list holds reference to the next, this implies that an element of the list is likely
+to be stored in a random location in memory.
+A list is segemented into two (2) parts head and tail and can contain different datatypes but usually contains</description>
+    </item>
+    
+  </channel>
+</rss>

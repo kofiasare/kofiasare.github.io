@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Kofi A. Asare">
+<meta name="description" content="List
+A list in elixir is denoted by square brackets [ ], its underlying data structure is a linked list ( single ) as opposed
+to an array. Each element (node) of the list holds reference to the next, this implies that an element of the list is likely
+to be stored in a random location in memory.
+A list is segemented into two (2) parts head and tail and can contain different datatypes but usually contains">
+
+<meta property="og:title" content="Elixir List" />
+<meta property="og:description" content="List
+A list in elixir is denoted by square brackets [ ], its underlying data structure is a linked list ( single ) as opposed
+to an array. Each element (node) of the list holds reference to the next, this implies that an element of the list is likely
+to be stored in a random location in memory.
+A list is segemented into two (2) parts head and tail and can contain different datatypes but usually contains" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/elixir-list/" /><meta property="article:published_time" content="2018-10-19T13:36:07&#43;00:00"/>
+<meta property="article:modified_time" content="2018-10-19T13:36:07&#43;00:00"/>
+
+<title>
+
+
+     Elixir List 
+
+</title>
+<link rel="canonical" href="/blog/elixir-list/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="/css/reset.css?t=2018-10-19%2022%3a32%3a43.377794%20%2b0000%20GMT%20m%3d%2b0.142034518">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-10-19%2022%3a32%3a43.377794%20%2b0000%20GMT%20m%3d%2b0.142034518">
+    <link rel="stylesheet" href="/css/main.css?t=2018-10-19%2022%3a32%3a43.377794%20%2b0000%20GMT%20m%3d%2b0.142034518">
+    
+        <link rel="stylesheet" href="/css/override.css?t=2018-10-19%2022%3a32%3a43.377794%20%2b0000%20GMT%20m%3d%2b0.142034518">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="/img/profile.ico"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+                
+                
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                
+                <a href="/"><img class="avatar" src="//img/profile.png" srcset="/img/profile.png 1x"></a>
+            
+            <a href="/"><div class="name">Kofi A. Asare</div></a>
+            
+              <h3 class="self-intro">Software Engineer</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-"><a href=""><span></span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="//github.com/kofiasare" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+
+	
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+
+        
+            <a href="mailto:archykofi@gmail.com"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    Elixir List
+
+</div>
+
+                    <div class="initials"><a href=""></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Fri Oct 19 2018 13:36:07 UTC'>Oct 19, 2018</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>2 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p><strong>List</strong></p>
+
+<p>A list in elixir is denoted by square brackets <code>[ ]</code>, its underlying data structure is a <code>linked list</code> ( single ) as  opposed</p>
+
+<p>to an <code>array</code>. Each element (node) of the list holds reference to the next, this implies that an element of the list is likely</p>
+
+<p>to be stored in a random location in memory.</p>
+
+<p><img src="/img/elixir_linked_list.png" alt="elixir_linked_list" /></p>
+
+<p>A list is segemented into two (2) parts <code>head</code> and <code>tail</code> and can contain different datatypes but usually contains</p>
+
+<p>same datatype.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="p">[</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="p">,</span> <span class="ss">:e</span><span class="p">]</span> <span class="c1"># =&gt;  [:a, :b, :c, :d, :e]</span>
+  <span class="n">head</span> <span class="c1">#=&gt; :a</span>
+  <span class="n">tail</span> <span class="c1">#=&gt; [:b, :c, :d, :e]</span>
+
+  <span class="p">[</span><span class="n">head</span> <span class="o">|</span> <span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">tail</span> <span class="c1"># =&gt;  [:b, :c, :d, :e]</span>
+  <span class="n">head</span> <span class="c1">#=&gt; :b</span>
+  <span class="n">tail</span> <span class="c1">#=&gt; [:c, :d, :e]</span>
+
+  <span class="p">[</span><span class="s2">&#34;a&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="p">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">],</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="nc">File</span> <span class="p">},</span>  <span class="p">%{</span><span class="ss">name</span><span class="p">:</span> <span class="ss">:kofi</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">100</span><span class="p">}]</span>
+
+  <span class="s2">&#34;a&#34;</span> <span class="c1"># =&gt; BitString</span>
+   <span class="mi">1</span>  <span class="c1"># =&gt; Integer</span>
+  <span class="ss">:b</span>  <span class="c1"># =&gt; Atom</span>
+  <span class="mf">4.5</span> <span class="c1"># =&gt; Float</span>
+  <span class="p">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">]</span> <span class="c1"># =&gt; List</span>
+  <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="nc">File</span> <span class="p">}</span> <span class="c1"># =&gt; Tuple</span>
+  <span class="p">%{</span><span class="ss">name</span><span class="p">:</span> <span class="ss">:kofi</span><span class="p">,</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span> <span class="c1"># =&gt; Map</span></code></pre></div>
+
+<p><strong>List Traversal</strong></p>
+
+<p>Traversing a list in elixir is <code>expensive</code> as it is a linear operation <code>O(n)</code>. Considering the list below, it will take</p>
+
+<p>five (5) iterations to reach the end of the list.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:a</span><span class="p">,</span> <span class="ss">:b</span><span class="p">,</span> <span class="ss">:c</span><span class="p">,</span> <span class="ss">:d</span><span class="p">,</span> <span class="ss">:e</span><span class="p">]</span></code></pre></div>
+
+<p><strong>List Update</strong></p>
+
+<p>Given the list below</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="s2">&#34;Bob&#34;</span><span class="p">]</span></code></pre></div>
+
+<p><code>Prepending ( | )</code> is fast.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;John&#34;</span> <span class="o">|</span> <span class="n">names</span><span class="p">]</span> <span class="c1"># =&gt; [&#34;John&#34;, &#34;Alice&#34;, &#34;Bob&#34;]</span></code></pre></div>
+
+<p><code>Appending ( ++ )</code> is slow.</p>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">names</span> <span class="o">=</span> <span class="n">names</span> <span class="o">++</span> <span class="p">[</span><span class="s2">&#34;Jane&#34;</span><span class="p">]</span> <span class="c1"># =&gt; [&#34;John&#34;, &#34;Alice&#34;, &#34;Bob&#34;, &#34;Jane&#34;]</span></code></pre></div>
+
+<p><strong>Take Away</strong> : Updating a list can be <code>cheap</code> depending on the update approach. it is therefore best practice to</p>
+
+<p>prepend <code>( | )</code>  instead of append <code>( ++ )</code>.</p>
+
+<p>Prepending is much faster because you don&rsquo;t iterate the length of the list to drop an element at the head thus</p>
+
+<p>a constant time <code>O(1)</code>.</p>
+
+<p>On the contrary, appending is slower because to drop an element at the tail, you iterate the length of the list</p>
+
+<p>hence a linear time <code>O(n)</code> where <code>n</code> is the length of the list.</p>
+
+<p><strong>Special Kernel Functions For Manipulating List</strong></p>
+
+<ul>
+<li>hd : Returns the head of List</li>
+</ul>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">hd</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># =&gt; 1</span></code></pre></div>
+
+<ul>
+<li>tl: Returns the tail of list</li>
+</ul>
+
+<div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir">  <span class="n">tl</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="c1"># =&gt; [2, 3, 4, 5]</span></code></pre></div>
+
+<p>Elixir list is suited for functional programming</p>
+
+                <br>
+                
+                  <div class="tags">
+                    <strong>Tags:</strong>
+                  
+                    <a href="/tags/elixir"> 💧elixir</a>
+                  
+                    <a href="/tags/functional-programming">functional programming</a>
+                  
+                    <a href="/tags/data-structures">data structures</a>
+                  
+                  </div>
+                  <br />
+                
+                <p class="back-to-posts"><a href="/blog">All Posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/languages/go.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+

@@ -21,6 +21,33 @@
     </item>
     
     <item>
+      <title>Data Structures</title>
+      <link>/tags/data-structures/</link>
+      <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
+      
+      <guid>/tags/data-structures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elixir</title>
+      <link>/tags/elixir/</link>
+      <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
+      
+      <guid>/tags/elixir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Functional Programming</title>
+      <link>/tags/functional-programming/</link>
+      <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
+      
+      <guid>/tags/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Go</title>
       <link>/tags/go/</link>
       <pubDate>Thu, 18 Oct 2018 16:12:14 +0000</pubDate>

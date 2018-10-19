@@ -12,6 +12,19 @@
     
     
     <item>
+      <title>Elixir List</title>
+      <link>/blog/elixir-list/</link>
+      <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
+      
+      <guid>/blog/elixir-list/</guid>
+      <description>List
+A list in elixir is denoted by square brackets [ ], its underlying data structure is a linked list ( single ) as opposed
+to an array. Each element (node) of the list holds reference to the next, this implies that an element of the list is likely
+to be stored in a random location in memory.
+A list is segemented into two (2) parts head and tail and can contain different datatypes but usually contains</description>
+    </item>
+    
+    <item>
       <title>Responding To Cors Preflight Request in Go</title>
       <link>/blog/responding-to-cors-preflight-request-in-go/</link>
       <pubDate>Thu, 18 Oct 2018 16:12:14 +0000</pubDate>
