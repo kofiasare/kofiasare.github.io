@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Named Function Outside Of A Module In Elixir</title>
+      <link>/blog/named-function-outside-of-a-module-in-elixir/</link>
+      <pubDate>Tue, 20 Nov 2018 13:00:07 +0000</pubDate>
+      
+      <guid>/blog/named-function-outside-of-a-module-in-elixir/</guid>
+      <description>Sometimes, In a dynamic typed language(interactive), you quickly want to group instructions to acheive a behaviour and
+repeated use i.e function.
+E.g: A function to find the sum of a list of numbers can be implemented so.
+Ruby #irb def sum(list_of_numbers) list_of_numbers.reduce(:+) end sum [1,2,3,4,5] #=&amp;gt; 15 Javascript //node repl function sum(listOfNumbers){ return listOfNumbers.reduce((acc = 0, n) =&amp;gt; acc + n) } sum([1,2,3,4,5]) //=&amp;gt; 15  Elixir Such flexibility isn&amp;rsquo;t quite the case in elixir.</description>
+    </item>
+    
+    <item>
       <title>Elixir List</title>
       <link>/blog/elixir-list/</link>
       <pubDate>Fri, 19 Oct 2018 13:36:07 +0000</pubDate>
