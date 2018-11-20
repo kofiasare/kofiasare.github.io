@@ -47,11 +47,11 @@ Ruby #irb def sum(list_of_numbers) list_of_numbers.reduce(:&#43;) end sum [1,2,3
 
 
     
-    <link rel="stylesheet" href="/css/reset.css?t=2018-11-20%2016%3a41%3a49.175974%20%2b0000%20GMT%20m%3d%2b0.258479153">
-    <link rel="stylesheet" href="/css/pygments.css?t=2018-11-20%2016%3a41%3a49.175974%20%2b0000%20GMT%20m%3d%2b0.258479153">
-    <link rel="stylesheet" href="/css/main.css?t=2018-11-20%2016%3a41%3a49.175974%20%2b0000%20GMT%20m%3d%2b0.258479153">
+    <link rel="stylesheet" href="/css/reset.css?t=2018-11-20%2016%3a58%3a52.961751%20%2b0000%20GMT%20m%3d%2b0.212625811">
+    <link rel="stylesheet" href="/css/pygments.css?t=2018-11-20%2016%3a58%3a52.961751%20%2b0000%20GMT%20m%3d%2b0.212625811">
+    <link rel="stylesheet" href="/css/main.css?t=2018-11-20%2016%3a58%3a52.961751%20%2b0000%20GMT%20m%3d%2b0.212625811">
     
-        <link rel="stylesheet" href="/css/override.css?t=2018-11-20%2016%3a41%3a49.175974%20%2b0000%20GMT%20m%3d%2b0.258479153">
+        <link rel="stylesheet" href="/css/override.css?t=2018-11-20%2016%3a58%3a52.961751%20%2b0000%20GMT%20m%3d%2b0.212625811">
     
 
 
@@ -232,9 +232,7 @@ Ruby #irb def sum(list_of_numbers) list_of_numbers.reduce(:&#43;) end sum [1,2,3
 <p>However, this can be made possible with an anonymous function</p>
 
 <div class="highlight"><pre class="chroma"><code class="language-elixir" data-lang="elixir"><span class="c1">#iex</span>
-<span class="n">sum</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">list_of_numbers</span><span class="p">)</span> <span class="o">-&gt;</span>
-  <span class="nc">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list_of_numbers</span><span class="p">,</span> <span class="n">fn</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">n</span> <span class="n">end</span><span class="p">)</span>
-<span class="n">end</span>
+<span class="n">sum</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="n">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nc">Enum</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="o">&amp;</span><span class="p">(</span><span class="ni">&amp;1</span> <span class="o">+</span> <span class="ni">&amp;2</span><span class="p">))</span> <span class="n">end</span>
 
 <span class="n">sum</span><span class="o">.</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> <span class="o">|&gt;</span> <span class="nc">IO</span><span class="o">.</span><span class="n">puts</span> <span class="c1">#=&gt; 15 👍</span></code></pre></div>
 
