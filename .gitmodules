@@ -1,0 +1,6 @@
+[submodule "blog/js30/JS30"]
+	path = blog/js30/JS30
+	url = /Users/kofiasare/Projects/personal/Js/JS30
+[submodule "js30"]
+	path = js30
+	url = /Users/kofiasare/Projects/personal/Js/js30
