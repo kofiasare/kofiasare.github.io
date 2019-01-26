@@ -1,0 +1,3 @@
+[submodule "blog/js30"]
+	path = blog/js30
+	url = git@github.com:kofiasare/js30.git
