@@ -1,0 +1,16 @@
+{
+    "name": "login",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "live-build": "sass --watch assets/stylesheets/login.scss:assets/stylesheets/login.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "css-ripple-effect": "^1.0.5",
+        "sass": "^1.16.1"
+    }
+}
