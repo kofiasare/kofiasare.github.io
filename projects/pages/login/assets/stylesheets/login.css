@@ -1,6 +1,18 @@
 @import url(https://cdn.jsdelivr.net/npm/css-ripple-effect@1.0.5/dist/ripple.min.css);
+@import url(https://unpkg.com/nprogress@0.2.0/nprogress.css);
 @import url(https://fonts.googleapis.com/css?family=Abel:regular);
 @import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,700);
+#nprogress .bar {
+  background: #009688;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px #009688, 0 0 5px #009688;
+}
+#nprogress .spinner-icon {
+  border-top-color: #009688;
+  border-left-color: #009688;
+}
+
 html {
   background-color: #fff;
 }
@@ -12,6 +24,7 @@ body {
 }
 body a {
   color: #009688;
+  outline: none;
 }
 
 #login_form {
