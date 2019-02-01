@@ -12,7 +12,8 @@ $(() => {
         { firstName: 'Kofi', lastName: 'Asare', email: 'kofi@gmail.com', password: 'tr#sted' },
     ];
 
-    var veryfyEmail = (email, timeout) => {
+    // Helpers
+    const veryfyEmail = (email, timeout) => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const user = (userProfiles.filter(profile => profile.email === email)[0]);
@@ -30,27 +31,28 @@ $(() => {
         NProgress.start();
         veryfyEmail(email, 1000)
             .then(user => {
-                if (!user) {
-                    $.toast({
-                        heading: 'Error',
-                        icon: 'error',
-                        position: 'top-center',
-                        hideAfter: false,
-                        stack: 1,
-                        showHideTransition: 'slide',
-                        text: `Your login detail is incorrect. Please try again`,
-                    })
-                    return NProgress.done();
+                if (user) {
+                    localStorage.setItem('verifiedUser', JSON.stringify({
+                        firstName: user.firstName,
+                        email: user.email,
+                        emailVerified: true
+                    }));
+                    location.href = '/projects/pages/login/views/password.html';
+                    return;
                 };
 
-                const userInfo = {
-                    firstName: user.firstName,
-                    email: user.email,
-                    emailVerified: true
-                };
+                // oninvalid credential 
+                $.toast({
+                    heading: 'Error',
+                    icon: 'error',
+                    position: 'top-center',
+                    hideAfter: false,
+                    stack: 1,
+                    showHideTransition: 'slide',
+                    text: `Your login detail is incorrect. Please try again`,
+                })
+                NProgress.done();
 
-                localStorage.setItem('verifiedUser', JSON.stringify(userInfo));
-                location.href = '/projects/pages/login/views/password.html';
             });
     });
 
