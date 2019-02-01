@@ -33,6 +33,11 @@
   display: none;
 }
 
+.container {
+  width: 90%;
+  margin: auto;
+}
+
 html {
   background-color: #fff;
 }
