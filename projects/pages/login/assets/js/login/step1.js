@@ -37,9 +37,7 @@ $('#login_form').on('submit', (e) => {
                     hideAfter: false,
                     stack: 1,
                     showHideTransition: 'slide',
-                    text: `An unexpected error occured while trying to show you the toast! 
-                    ..Just kidding, it is just a message, toast is right in front of you.
-                    `,
+                    text: `Your login detail is incorrect. Please try again`,
                 })
                 return NProgress.done();
             };
