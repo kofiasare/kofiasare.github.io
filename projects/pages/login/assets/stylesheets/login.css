@@ -28,6 +28,10 @@
     background-image: url("../images/flags@2x.png");
   }
 }
+.hide {
+  display: none;
+}
+
 html {
   background-color: #fff;
 }

@@ -1,3 +1,9 @@
+NProgress.start();
+window.onload = () => {
+    localStorage.clear();
+    NProgress.done();
+}
+
 $(() => {
     $('form input[type=tel]').intlTelInput({
         autoHideDialCode: false,
@@ -14,9 +20,3 @@ $(() => {
         }
     });
 })
-
-NProgress.start();
-window.onload = () => {
-    localStorage.clear();
-    NProgress.done();
-}
