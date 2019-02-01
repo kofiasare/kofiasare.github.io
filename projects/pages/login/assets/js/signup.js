@@ -1,10 +1,7 @@
-NProgress.start();
-window.onload = () => {
-    localStorage.clear();
-    NProgress.done();
-}
-
 $(() => {
+    // Initialize Animsition
+    $(".animsition").animsition({});
+
     $('form input[type=tel]').intlTelInput({
         autoHideDialCode: false,
         separateDialCode: false,

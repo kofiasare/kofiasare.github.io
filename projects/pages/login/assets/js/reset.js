@@ -1,5 +1,4 @@
-NProgress.start();
-window.onload = () => {
-    localStorage.clear();
-    NProgress.done();
-}
+$(() => {
+    // Initialize Animsition
+    $(".animsition").animsition({});
+})
