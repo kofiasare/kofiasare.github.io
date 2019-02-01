@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/stylesheets/login.css">
-    <title> Login :: Step 1 </title>
+    <link rel="stylesheet" href="../assets/stylesheets/login.css">
+    <title> Reset Password </title>
 </head>
 
 <body>
 
-    <div id="login_form" class="login form step_1">
+    <div id="reset_form" class="reset form">
 
         <div class="header">
-            <h1>login</h1>
-            <p>enter your email address</p>
+            <h1>forgot password?</h1>
+            <p>enter your email and we'll send you a link to get back into your account.</p>
         </div>
 
         <form>
@@ -24,15 +24,15 @@
             </div>
 
             <div class="item">
-                <button type="submit" class="ripple">
-                    next
+                <button type="button" class="ripple">
+                    reset
                 </button>
             </div>
         </form>
 
         <div class="footer">
-            <a href='/projects/pages/login/views/signup.html'>Create account</a> |
-            <a href='/projects/pages/login/views/reset.html'>Forgot email?</a>
+            <a href='/projects/pages/login/index.html'>Log in</a> |
+            <a href='/projects/pages/login/views/signup.html'>Create account</a>
         </div>
 
     </div>
@@ -48,10 +48,8 @@
     </footer>
 
     <!-- load js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
-    <script src="./assets/js/login/step1.js"></script>
+    <script src="../assets/js/reset.js"></script>
 </body>
 
 </html>
